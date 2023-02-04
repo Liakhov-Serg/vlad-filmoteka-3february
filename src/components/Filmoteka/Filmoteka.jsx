@@ -1,14 +1,26 @@
-import React from "react";
+import { Component } from "react";
 import PropTypes from 'prop-types'
 import MovieForm from "../MovieForm/MovieForm";
 
-function Filmoteka(props) {
-    return (
-        <div>
-         Filmoteka
-         <MovieForm />
-        </div>
-    )
+class Filmoteka extends Component {
+
+    state = {
+        filmList: [],
+    };
+
+    handleAddFilm = (film) => {
+        this.setState(prevState => ({ filmList: [] }));
+}
+
+render() {
+
+return (
+    <div>
+        Filmoteka
+        <MovieForm />
+    </div>
+);
+}
 }
 
 Filmoteka.propTypes = {}
