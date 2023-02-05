@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 const INITIAL_STATE = {
     filmName: "",
     url: "",
-    ganre: "",
+    genre: "",
     views: "",
 };
 
@@ -25,7 +25,7 @@ class MovieForm extends Component {
         this.setState(INITIAL_STATE);
     };
     render() {
-        const { filmName, url, ganre, views } = this.state;
+        const { filmName, url, genre, views } = this.state;
         return (
             // <div>MovieForm</div>
             <form onSubmit={this.handleSubmitForm}>
@@ -45,11 +45,11 @@ class MovieForm extends Component {
                     placeholder="Avatar URL"
                     required
                     minLength={10} />
-                <select name="ganre"
-                    value={ganre}
+                <select name="genre"
+                    value={genre}
                     onChange={this.handleChangeInfo}>
                     <option value="" disabled>
-                        CHoose ganre
+                        CHoose genre
                     </option>
                     <option value="horror">horror</option>
                     <option value="comedy">comedy</option>
@@ -62,6 +62,7 @@ class MovieForm extends Component {
                     onChange={this.handleChangeInfo}
                     placeholder="views"
                     required
+                    min="0"
                     type="number" />
                 <button
                     className="btn btn-primery"

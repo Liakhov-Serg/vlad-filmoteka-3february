@@ -8,7 +8,7 @@ const FilmList = ({ filmList = [], onDeleteFilm }) => {
             <li key={item.id}>
                 <img width={150} src={item.url} alt={item.filmName} />
                 <h3>{item.filmName}</h3>
-                <p>Ganre: {item.ganre}</p>
+                <p>Ganre: {item.genre}</p>
                 <p>Views: {item.views}</p>
                 <button onClick={()=>onDeleteFilm(item.id)} className="btn" type="button">
                     Delete me
@@ -25,7 +25,7 @@ FilmList.propTypes = {
         id: PropTypes.string.isRequired,
         filmName: PropTypes.string.isRequired,
         url: PropTypes.string.isRequired,
-        ganre: PropTypes.string.isRequired,
+        genre: PropTypes.string.isRequired,
         views: PropTypes.string.isRequired,
     }
 
